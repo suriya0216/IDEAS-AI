@@ -5,7 +5,7 @@ from gtts import gTTS
 import os
 
 # --- CONFIGURATION ---
-genai.configure(api_key="AIzaSyDKvrTZc55pPtaY-4CRxTu7cY7xcCCOT4I")
+genai.configure(api_key="AIzaSyBukQkr6-XftLIW-Ay2thyT3NTcfkU7IEk")
 model = genai.GenerativeModel('gemini-2.5-flash')
 
 st.set_page_config(page_title="IDAS AI", page_icon="💡")
@@ -61,3 +61,4 @@ if prompt := st.chat_input("How can I help you solve a problem today?"):
 if os.path.exists("response.mp3"):
     try: os.remove("response.mp3")
     except: pass
+
