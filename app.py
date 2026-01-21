@@ -74,7 +74,7 @@ st.markdown(f"""
 
 # --- 3. AI CORE SETUP ---
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash-latest')
+model = genai.GenerativeModel('gemini-pro')
 
 # --- 4. SIDEBAR: ALL FEATURES + GLOBAL NETWORK ---
 if "history" not in st.session_state: st.session_state.history = []
@@ -195,4 +195,5 @@ with col2:
 if os.path.exists("voice_out.mp3"):
     try: os.remove("voice_out.mp3")
     except: pass
+
 
