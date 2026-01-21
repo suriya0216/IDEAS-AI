@@ -74,8 +74,6 @@ st.markdown(f"""
 
 # --- 3. AI CORE SETUP ---
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-
-# This specific naming works best with the 0.8.3 library
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 # --- 4. SIDEBAR: ALL FEATURES + GLOBAL NETWORK ---
@@ -197,6 +195,7 @@ with col2:
 if os.path.exists("voice_out.mp3"):
     try: os.remove("voice_out.mp3")
     except: pass
+
 
 
 
