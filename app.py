@@ -5,9 +5,7 @@ from gtts import gTTS
 import os
 
 # --- CONFIGURATION ---
-GEMINI_API_KEY = "AIzaSyDKvrTZc55pPtaY-4CRxTu7cY7xcCCOT4I"
-# Replace the old genai.configure line with this:
-genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+genai.configure(api_key="AIzaSyDKvrTZc55pPtaY-4CRxTu7cY7xcCCOT4I")
 model = genai.GenerativeModel('gemini-2.5-flash')
 
 st.set_page_config(page_title="IDAS AI", page_icon="💡")
