@@ -73,8 +73,15 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # --- 3. AI CORE SETUP ---
+import google.generativeai as genai
+
+# 1. Configure the key
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
+
+# 2. Force the model to use the stable Flash version
+model = genai.GenerativeModel(
+    model_name="gemini-1.5-flash",
+)
 
 # --- 4. SIDEBAR: ALL FEATURES + GLOBAL NETWORK ---
 if "history" not in st.session_state: st.session_state.history = []
@@ -195,6 +202,7 @@ with col2:
 if os.path.exists("voice_out.mp3"):
     try: os.remove("voice_out.mp3")
     except: pass
+
 
 
 
